@@ -1,0 +1,2 @@
+# scala
+scala language pratise
