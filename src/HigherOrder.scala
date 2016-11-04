@@ -1,4 +1,4 @@
-object Test{
+object HigherOrder{
 	def main(args: Array[String])  {
 		println(apply(layout,10))
 	}
