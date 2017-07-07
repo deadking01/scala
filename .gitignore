@@ -1,3 +1,9 @@
 .idea
 out
 *.iml
+### Scala template
+*.class
+*.log
+
+project/
+target/
