@@ -5,7 +5,7 @@ package com.git.scala.demo.wuqf
   */
 object HelloWorld {
   def main(args: Array[String]): Unit = {
-    testCollection
+    testYield
   }
 
   def testHeadAndTail(): Unit = {
@@ -81,6 +81,11 @@ object HelloWorld {
 
   def timesTwo(i: Int): Int = {
     i * 2
+  }
+  def testYield():Unit={
+    val numbers=List(1,2,3,4,5)
+    val nn= for(i<-Range(1,3)) yield i
+    nn.foreach(println)
   }
 }
 
