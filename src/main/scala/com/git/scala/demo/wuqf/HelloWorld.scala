@@ -84,8 +84,9 @@ object HelloWorld {
   }
   def testYield():Unit={
     val numbers=List(1,2,3,4,5)
-    val nn= for(i<-Range(1,3)) yield i
+    val nn= for(i<-Range(1,3)) yield i*2
     nn.foreach(println)
   }
+
 }
 
