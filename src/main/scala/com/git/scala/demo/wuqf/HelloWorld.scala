@@ -39,10 +39,10 @@ object HelloWorld {
   def testCollection(): Unit = {
     //List
     val numbers = List(1, 2, 3, 4, 5)
-    numbers.foreach(x=>println("number is: "+x))
+    numbers.foreach(x => println("number is: " + x))
     //Set
     val sets = Set(1, 2, 1)
-    sets.foreach(x=>println("elemant in set is: "+x))
+    sets.foreach(x => println("elemant in set is: " + x))
 
     //Tuple
     val hostPort = ("localhost", 80)
@@ -52,41 +52,51 @@ object HelloWorld {
 
     //Map
     val m = Map(1 -> "one", 2 -> "two")
-    m.foreach(i => println("element in map is :"+i))
+    m.foreach(i => println("element in map is :" + i))
 
 
     val dnumbers = numbers.map((i: Int) => i * 2)
-    dnumbers.foreach(i => println("element in dnumbers is :"+i))
+    dnumbers.foreach(i => println("element in dnumbers is :" + i))
 
     val fnumbers = dnumbers.map(timesTwo _)
-    fnumbers.foreach(i => println("element in fnumbers is :"+i))
+    fnumbers.foreach(i => println("element in fnumbers is :" + i))
 
     val filterNumbers = numbers.filter((i) => i % 2 == 0)
     filterNumbers.foreach(i => println("\"element in filterNumbers is: " + i))
 
-    val zipNumbers=List(1,2,3,1).zip(List("a","b","c","d"))
+    val zipNumbers = List(1, 2, 3, 1).zip(List("a", "b", "c", "d"))
     zipNumbers.foreach(i => println("element in zipNumbers is: " + i))
 
-    val sumLeft=numbers.foldLeft(1)((i,j)=>i+j)
-    println("foldLeftSum: "+sumLeft)
+    val sumLeft = numbers.foldLeft(1)((i, j) => i + j)
+    println("foldLeftSum: " + sumLeft)
 
-    val sumRight=numbers.foldRight(0)((i,j)=>i+j)
-    println("foldRightSum: "+sumRight)
+    val sumRight = numbers.foldRight(0)((i, j) => i + j)
+    println("foldRightSum: " + sumRight)
 
-    val flatNumbers=List(List(1,2,3),List(4,5,6)).flatten
+    val flatNumbers = List(List(1, 2, 3), List(4, 5, 6)).flatten
 
-    val fmNumbers=List(List(1,2,3),List(4,5,6)).flatMap(x=>x.map(_ * 2))
+    val fmNumbers = List(List(1, 2, 3), List(4, 5, 6)).flatMap(x => x.map(_ * 2))
 
   }
 
   def timesTwo(i: Int): Int = {
     i * 2
   }
-  def testYield():Unit={
-    val numbers=List(1,2,3,4,5)
-    val nn= for(i<-Range(1,3)) yield i*2
+
+  def testYield(): Unit = {
+    val numbers = List(1, 2, 3, 4, 5)
+
+    val nn = for (i <- Range(1, 3)) yield i * 2
     nn.foreach(println)
+
+    println("-------------------")
+    val pp = for (i <- Range(1, 3)) yield dulElement(i)
+
+    pp.foreach(println)
   }
 
+  def dulElement(data: Int) = {
+    (data * 2)
+  }
 }
 
